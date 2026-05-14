@@ -131,9 +131,10 @@ export default function Header() {
               <>
                 <NavLink to="/adminhome">Dashboard</NavLink>
                 <NavLink to="/manageuser">Users</NavLink>
-                <DropdownMenu label="Category" onClose={close} items={[
-                  { to: '/addcategory', label: 'Add Category' },
-                  { to: '/addsubcategory', label: 'Add Sub Category' },
+                <DropdownMenu label="Catalogue" onClose={close} items={[
+                  { to: '/addcategory',    label: 'Add Category'     },
+                  { to: '/addsubcategory', label: 'Add Sub-Category' },
+                  { to: '/addproduct',     label: 'Add Product'      },
                 ]} />
                 <DropdownMenu label="Settings" onClose={close} items={[
                   { to: '/cpadmin', label: 'Change Password' },
@@ -213,8 +214,9 @@ export default function Header() {
                   <>
                     <Link to="/adminhome" className="nav__m-link" onClick={close}>Dashboard</Link>
                     <Link to="/manageuser" className="nav__m-link" onClick={close}>Manage Users</Link>
-                    <Link to="/addcategory" className="nav__m-link" onClick={close}>Add Category</Link>
-                    <Link to="/addsubcategory" className="nav__m-link" onClick={close}>Add Sub Category</Link>
+                    <Link to="/addcategory"    className="nav__m-link" onClick={close}>Add Category</Link>
+                    <Link to="/addsubcategory" className="nav__m-link" onClick={close}>Add Sub-Category</Link>
+                    <Link to="/addproduct"     className="nav__m-link" onClick={close}>Add Product</Link>
                     <hr className="nav__m-hr" />
                     <Link to="/cpadmin" className="nav__m-link" onClick={close}>Change Password</Link>
                     <Link to="/epadmin" className="nav__m-link" onClick={close}>Edit Profile</Link>

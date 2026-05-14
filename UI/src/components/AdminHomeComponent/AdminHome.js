@@ -68,6 +68,7 @@ function AdminHome() {
         <ActionCard icon="👥" to="/manageuser"     title="Manage Users"       desc="Verify, block, or remove registered users." />
         <ActionCard icon="🗂️" to="/addcategory"    title="Add Category"       desc="Create a new auction product category." />
         <ActionCard icon="📁" to="/addsubcategory" title="Add Sub-Category"   desc="Add a sub-category to an existing one." />
+        <ActionCard icon="📦" to="/addproduct"     title="Add Product"        desc="List a new product for auction on the platform." />
         <ActionCard icon="🔑" to="/cpadmin"        title="Change Password"    desc="Update your admin account password." />
         <ActionCard icon="✏️" to="/epadmin"        title="Edit Profile"       desc="Update your name, contact and details." />
       </div>
