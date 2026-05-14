@@ -131,7 +131,8 @@ export default function Header() {
               <>
                 <NavLink to="/adminhome">Dashboard</NavLink>
                 <NavLink to="/manageuser">Users</NavLink>
-                <DropdownMenu label="Catalogue" onClose={close} items={[
+                <NavLink to="/catalogue">Catalogue</NavLink>
+                <DropdownMenu label="Add" onClose={close} items={[
                   { to: '/addcategory',    label: 'Add Category'     },
                   { to: '/addsubcategory', label: 'Add Sub-Category' },
                   { to: '/addproduct',     label: 'Add Product'      },
@@ -212,11 +213,12 @@ export default function Header() {
                 )}
                 {role === 'admin' && (
                   <>
-                    <Link to="/adminhome" className="nav__m-link" onClick={close}>Dashboard</Link>
-                    <Link to="/manageuser" className="nav__m-link" onClick={close}>Manage Users</Link>
-                    <Link to="/addcategory"    className="nav__m-link" onClick={close}>Add Category</Link>
+                    <Link to="/adminhome"      className="nav__m-link" onClick={close}>Dashboard</Link>
+                    <Link to="/manageuser"    className="nav__m-link" onClick={close}>Manage Users</Link>
+                    <Link to="/catalogue"     className="nav__m-link" onClick={close}>Catalogue</Link>
+                    <Link to="/addcategory"   className="nav__m-link" onClick={close}>Add Category</Link>
                     <Link to="/addsubcategory" className="nav__m-link" onClick={close}>Add Sub-Category</Link>
-                    <Link to="/addproduct"     className="nav__m-link" onClick={close}>Add Product</Link>
+                    <Link to="/addproduct"    className="nav__m-link" onClick={close}>Add Product</Link>
                     <hr className="nav__m-hr" />
                     <Link to="/cpadmin" className="nav__m-link" onClick={close}>Change Password</Link>
                     <Link to="/epadmin" className="nav__m-link" onClick={close}>Edit Profile</Link>

@@ -66,6 +66,7 @@ function AdminHome() {
 
       <div className="adm-actions">
         <ActionCard icon="👥" to="/manageuser"     title="Manage Users"       desc="Verify, block, or remove registered users." />
+        <ActionCard icon="🔍" to="/catalogue"     title="View Catalogue"     desc="Browse, filter and explore all categories, sub-categories and products." />
         <ActionCard icon="🗂️" to="/addcategory"    title="Add Category"       desc="Create a new auction product category." />
         <ActionCard icon="📁" to="/addsubcategory" title="Add Sub-Category"   desc="Add a sub-category to an existing one." />
         <ActionCard icon="📦" to="/addproduct"     title="Add Product"        desc="List a new product for auction on the platform." />

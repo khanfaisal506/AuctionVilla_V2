@@ -24,6 +24,7 @@ import AddSubCategory from './components/AddSubCategoryComponent/AddSubCategory.
 import ViewProductCategory from './components/ViewProductCategoryComponent/ViewProductCategory.js';
 import ViewProductSubCategory from './components/ViewProductSubCategoryComponent/ViewProductSubCategory.js';
 import AddProduct from './components/AddProductComponent/AddProduct.js';
+import Catalogue from './components/CatalogueComponent/Catalogue.js';
 import ViewProductComponent from './components/ViewProductComponent/ViewProductComponent';
 import Bidproduct from './components/BidproductComponent/Bidproduct.js';
 import Viewbid from './components/ViewbidComponent/Viewbid.js';
@@ -60,6 +61,7 @@ function App() {
         <Route path="/addcategory" element={<AddCategory />} />
         <Route path="/addsubcategory" element={<AddSubCategory />} />
         <Route path="/addproduct" element={<AddProduct />} />
+        <Route path="/catalogue" element={<Catalogue />} />
         <Route path="/bidp/:_id" element={<Bidproduct />} />
         <Route path="/viewbid/:p_id" element={<Viewbid />} />
         <Route path="/viewbidproduct" element={<ViewbidProduct />} />
