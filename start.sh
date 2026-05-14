@@ -2,6 +2,10 @@
 
 mkdir -p /home/runner/workspace/data/db
 
+# Kill any processes using ports 3001 and 5000
+fuser -k 3001/tcp 2>/dev/null || true
+fuser -k 5000/tcp 2>/dev/null || true
+
 # Start MongoDB if not already running
 if ! pgrep -x mongod > /dev/null; then
   mongod --dbpath /home/runner/workspace/data/db --bind_ip 127.0.0.1 --port 27017 --fork --logpath /home/runner/workspace/data/mongod.log
