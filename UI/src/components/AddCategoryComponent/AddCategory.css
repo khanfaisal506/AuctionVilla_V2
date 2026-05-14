@@ -1,68 +1,113 @@
-.background-image {
-    /* Set background image properties */
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Adjust as needed */
+.adf-page {
+  min-height: 100vh;
+  background: #07070f;
+  padding: 100px 32px 60px;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.adf-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px 32px;
+}
+.adf-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.adf-card p {
+  color: rgba(255,255,255,0.38);
+  font-size: 0.85rem;
+  margin: 0 0 28px;
 }
 
-.content-container {  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Fill the height of the parent */
+.adf-field { margin-bottom: 20px; }
+.adf-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.adf-field input[type="text"],
+.adf-field select {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.adf-field input[type="text"]:focus,
+.adf-field select:focus {
+  border-color: rgba(139,92,246,0.5);
+}
+.adf-field select option { background: #1a1a2e; }
+
+.adf-upload {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1.5px dashed rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.adf-upload:hover { border-color: rgba(139,92,246,0.4); }
+.adf-upload input { display: none; }
+.adf-upload__label {
+  display: block;
+  cursor: pointer;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.85rem;
+}
+.adf-upload__label span { color: #a78bfa; }
+.adf-upload__name {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #34d399;
 }
 
-.admin-message {
-    /* Style the admin message */
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
+.adf-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.2);
+  color: #34d399;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.manage-button {
-    /* Style the manage buttons */
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px;
+.adf-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.03em;
 }
-
-.manage-button:hover {
-    background-color: #0056b3;
-}
-
-.welcome-message-Admin {
-    font-size: 46px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-/* Add this CSS to your styles.css file */
-.container-xxl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
-}
-
-.container-addc{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-h1.mb-4 {
-    text-align: center;
-}
-
-.addcform {
-    width: 100%; /* You can adjust this width as needed */
-    max-width: 500px; /* To control the maximum width of the form */
-}
+.adf-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.adf-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }

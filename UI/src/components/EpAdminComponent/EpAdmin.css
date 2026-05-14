@@ -1,46 +1,120 @@
-.background-image {
-    /* Set background image properties */
-    background-color: black;
-    background-size: cover;
-    height: 100vh; /* Adjust as needed */
+.ep-page {
+  min-height: 100vh;
+  background: #07070f;
+  padding: 100px 32px 60px;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.ep-card {
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px 32px;
+}
+.ep-card h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 6px; }
+.ep-card p  { color: rgba(255,255,255,0.38); font-size: 0.85rem; margin: 0 0 28px; }
+
+.ep-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
-.content-container-admin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Fill the height of the parent */
-    padding-bottom: 100px;
+.ep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ep-grid--full { grid-column: 1 / -1; }
 
+.ep-field { margin-bottom: 0; }
+.ep-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.ep-field input,
+.ep-field textarea,
+.ep-field select {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: none;
+}
+.ep-field input:focus,
+.ep-field textarea:focus,
+.ep-field select:focus { border-color: rgba(139,92,246,0.5); }
+.ep-field select option { background: #1a1a2e; }
+
+.ep-radio-group { display: flex; gap: 12px; margin-top: 2px; }
+.ep-radio {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+}
+.ep-radio:has(input:checked) {
+  border-color: rgba(139,92,246,0.45);
+  color: #a78bfa;
+  background: rgba(139,92,246,0.07);
+}
+.ep-radio input { accent-color: #8b5cf6; }
+
+.ep-msg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.2);
+  color: #34d399;
 }
 
-.welcome-message {
-    /* Style the welcome message */
-    font-size: 46px;
-    font-weight: bold;
-    color: #ffffff;
-   
+.ep-actions { display: flex; gap: 12px; margin-top: 24px; }
+.ep-btn {
+  flex: 1;
+  padding: 13px;
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.03em;
 }
-
-.admin-message {
-    /* Style the admin message */
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.manage-button {
-    /* Style the manage buttons */
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.manage-button:hover {
-    background-color: #0056b3;
-}
+.ep-btn:hover { opacity: 0.88; transform: translateY(-1px); }

@@ -1,50 +1,85 @@
-.background-image {
-    /* Set background image properties */
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Adjust as needed */
+.cp-page {
+  min-height: 100vh;
+  background: #07070f;
+  padding: 100px 32px 60px;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Fill the height of the parent */
+.cp-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px 32px;
 }
+.cp-card h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 6px; }
+.cp-card p  { color: rgba(255,255,255,0.38); font-size: 0.85rem; margin: 0 0 28px; }
 
-.welcome-message {
-    /* Style the welcome message */
-    font-size: 46px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 20px;
+.cp-field { margin-bottom: 20px; }
+.cp-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-
-.admin-message {
-    /* Style the admin message */
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
+.cp-input-wrap { position: relative; }
+.cp-field input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 11px 42px 11px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
 }
-
-.manage-button {
-    /* Style the manage buttons */
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.cp-field input:focus { border-color: rgba(139,92,246,0.5); }
+.cp-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
 }
+.cp-eye:hover { color: rgba(255,255,255,0.6); }
 
-.manage-button:hover {
-    background-color: #0056b3;
+.cp-msg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
+.cp-msg--success { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); color: #34d399; }
+.cp-msg--error   { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18); color: #f87171; }
 
-.changepassword
-{
-    margin-bottom: 600px;
-}   
+.cp-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.03em;
+}
+.cp-btn:hover { opacity: 0.88; transform: translateY(-1px); }

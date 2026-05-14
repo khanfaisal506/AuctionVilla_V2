@@ -1,45 +1,127 @@
-.background-image {
-    /* Set background image properties */
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Adjust as needed */
+.adm-page {
+  min-height: 100vh;
+  background: #07070f;
+  padding: 100px 32px 60px;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-.content-container {
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Fill the height of the parent */
+.adm-welcome {
+  margin-bottom: 40px;
+}
+.adm-welcome h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.adm-welcome p {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.adm-welcome span {
+  background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.admin-message {
-    /* Style the admin message */
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
+.adm-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 40px;
 }
 
-.manage-button {
-    /* Style the manage buttons */
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px;
+.adm-stat {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.adm-stat:hover {
+  border-color: rgba(139,92,246,0.35);
+  background: rgba(139,92,246,0.06);
+}
+.adm-stat__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.adm-stat__icon--purple { background: rgba(139,92,246,0.15); }
+.adm-stat__icon--blue   { background: rgba(56,189,248,0.15); }
+.adm-stat__icon--green  { background: rgba(52,211,153,0.15); }
+.adm-stat__icon--pink   { background: rgba(236,72,153,0.15); }
+
+.adm-stat__val {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.adm-stat__lbl {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-.manage-button:hover {
-    background-color: #0056b3;
+.adm-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
 }
 
-.welcome-message-Admin {
-    font-size: 46px;
-    font-weight: bold;
-    color: #ffffff;
+.adm-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.adm-card:hover {
+  border-color: rgba(139,92,246,0.4);
+  background: rgba(139,92,246,0.07);
+  transform: translateY(-2px);
+}
+.adm-card__icon {
+  font-size: 1.6rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(139,92,246,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adm-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+.adm-card__desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
+  line-height: 1.5;
+}
+.adm-card__arrow {
+  margin-top: auto;
+  color: rgba(139,92,246,0.7);
+  font-size: 0.85rem;
 }
