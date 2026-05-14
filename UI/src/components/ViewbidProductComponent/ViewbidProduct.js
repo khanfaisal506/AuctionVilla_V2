@@ -1,65 +1,83 @@
 import './ViewbidProduct.css';
-import { useState , useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { _productapiurl } from '../../api.url.js';
 import { Link } from 'react-router-dom';
 
 function ViewbidProduct() {
+  const [pDetails, setProductDetails] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [ pDetails , setProductDetails ] = useState([]);
+  const fetchProducts = useCallback(() => {
+    setLoading(true);
+    axios.get(_productapiurl + 'fetch?uid=' + localStorage.getItem('email'))
+      .then(res => { setProductDetails(res.data); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, []);
 
-  useEffect(()=>{
-    axios.get(_productapiurl+"fetch?uid="+localStorage.getItem("email")).then((response)=>{
-      setProductDetails(response.data);  
-    }).catch((error)=>{
-      console.log(error);   
-    });
-  });      
+  useEffect(() => { fetchProducts(); }, [fetchProducts]);
 
   return (
-    <>
-            {/* About Start */}
-            <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-<div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-<h1 class="mb-4">View Bidding Details</h1>
+    <div className="vbp-page">
+      <div className="vbp-header">
+        <h1>My Listed Products</h1>
+        <p>All items you've put up for auction — click "View Bids" to see activity.</p>
+        {!loading && (
+          <span className="vbp-count">
+            {pDetails.length} product{pDetails.length !== 1 ? 's' : ''}
+          </span>
+        )}
+      </div>
 
-<table class="table table-bordered">
-<tr>
-<th>ProductID</th>
-<th>Title</th>
-<th>Category</th>
-<th>Description</th>
-<th>Base Price</th>
-<th>Product Icon</th>
-<th>Info</th>
-<th>Action</th>
-</tr>  
-
-{
-  pDetails.map((row)=>(
-    <tr>
-      <td>{row._id}</td>
-      <td>{row.title}</td>
-      <td>{row.subcatnm}</td>
-      <td>{row.description}</td>
-      <td>{row.baseprice}</td>
-      <td>{row.piconnm}</td>
-      <td>{row.info}</td>
-      <td><Link to={`/viewbid/${row._id}`} >Show Bid</Link></td>
-    </tr>
-  ))
-}
-
-</table>
-
-</div>
-                </div>
-            </div>
-        </div>
-        {/* About End */}
-    </>
+      <div className="vbp-table-wrap">
+        {loading ? (
+          <div className="vbp-empty">Loading your products…</div>
+        ) : pDetails.length === 0 ? (
+          <div className="vbp-empty">
+            You haven't listed any products yet.
+            <br />
+            <Link to="/addproduct">+ List your first item →</Link>
+          </div>
+        ) : (
+          <table className="vbp-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Base Price</th>
+                <th>Listed On</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pDetails.map((row, i) => (
+                <tr key={row._id}>
+                  <td style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.78rem' }}>
+                    {i + 1}
+                  </td>
+                  <td className="vbp-title">{row.title}</td>
+                  <td><span className="vbp-cat">{row.subcatnm}</span></td>
+                  <td style={{ maxWidth: 200, color: 'rgba(255,255,255,0.5)', fontSize: '0.82rem' }}>
+                    {row.description?.length > 60 ? row.description.slice(0, 60) + '…' : row.description}
+                  </td>
+                  <td className="vbp-price">{row.baseprice}</td>
+                  <td style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem' }}>
+                    {row.info ? new Date(row.info).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—'}
+                  </td>
+                  <td>
+                    <Link to={`/viewbid/${row._id}`} className="vbp-btn">
+                      View Bids →
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </div>
   );
 }
 

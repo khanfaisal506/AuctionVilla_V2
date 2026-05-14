@@ -1,67 +1,128 @@
-.viewbid {
-    height: 100vh;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: black;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 100px;
-  }
-  
-  .viewbid h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Table Styles */
-  
-  .viewbid table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-  }
-  
-  .viewbid th, .viewbid td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .viewbid th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
-  
-  .viewbid td {
-    background-color: #fff;
-  }
-  
-  .viewbid tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .viewbid tr:hover {
-    background-color: #f2f2f2;
-  }
-  
-  /* Responsive Design */
-  
-  @media only screen and (max-width: 768px) {
-    .viewbid {
-      margin: 20px auto;
-    }
-    .viewbid table {
-      font-size: 14px;
-    }
-  }
-  
-  @media only screen and (max-width: 480px) {
-    .viewbid {
-      margin: 10px auto;
-    }
-    .viewbid table {
-      font-size: 12px;
-    }
-  }
+.vb-page {
+  min-height: 100vh;
+  background: #07070f;
+  padding: 100px 32px 60px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.vb-header { margin-bottom: 28px; }
+.vb-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+}
+.vb-header p { color: rgba(255,255,255,0.4); font-size: 0.88rem; margin: 0; }
+.vb-pid {
+  display: inline-block;
+  margin-top: 10px;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.22);
+  color: #a78bfa;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+
+.vb-table-wrap {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.vb-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+.vb-table thead tr {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.vb-table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+}
+.vb-table td {
+  padding: 15px 20px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+.vb-table tbody tr:last-child td { border-bottom: none; }
+.vb-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+
+.vb-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.4);
+}
+.vb-rank--1 { background: rgba(251,191,36,0.15); color: #fbbf24; }
+.vb-rank--2 { background: rgba(148,163,184,0.12); color: #94a3b8; }
+.vb-rank--3 { background: rgba(180,120,60,0.12);  color: #b4783c; }
+
+.vb-price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #34d399;
+}
+.vb-price::before { content: '₹'; font-size: 0.8rem; margin-right: 1px; }
+
+.vb-uid {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  font-family: monospace;
+}
+
+.vb-date { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+.vb-top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(251,191,36,0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(251,191,36,0.22);
+  margin-left: 8px;
+}
+
+.vb-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.9rem;
+}
+
+.vb-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.83rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 0.15s;
+}
+.vb-back:hover { color: #a78bfa; }
