@@ -1,50 +1,172 @@
-.background-image {
-    /* Set background image properties */
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    height: 100vh; /* Adjust as needed */
+.adf-page {
+  min-height: 100vh;
+  background: #07070f;
+  padding: 100px 32px 60px;
+  font-family: 'Inter', system-ui, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-form{
-    margin-top: 100px;
-    height: 100vh;
+.adf-card {
+  width: 100%;
+  max-width: 620px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px 32px;
 }
 
-.content-container {
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Fill the height of the parent */
+/* Header */
+.adf-card__head { margin-bottom: 28px; }
+.adf-card__head h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+.adf-card__head p {
+  color: rgba(255,255,255,0.38);
+  font-size: 0.85rem;
+  margin: 0;
 }
 
-.admin-message {
-    /* Style the admin message */
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-align: center;
+/* Two-column row */
+.adf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.manage-button {
-    /* Style the manage buttons */
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 10px;
+/* Fields */
+.adf-field { margin-bottom: 18px; }
+.adf-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.manage-button:hover {
-    background-color: #0056b3;
+.adf-field input[type="text"],
+.adf-field input[type="number"],
+.adf-field select,
+.adf-field textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.adf-field input:focus,
+.adf-field select:focus,
+.adf-field textarea:focus { border-color: rgba(139,92,246,0.52); }
+.adf-field textarea { resize: vertical; min-height: 90px; }
+.adf-field select option { background: #1a1a2e; }
+
+/* Price prefix */
+.adf-price { position: relative; }
+.adf-price__sym {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.35);
+  font-size: 0.88rem;
+  pointer-events: none;
+}
+.adf-price input { padding-left: 28px !important; }
+
+/* File upload */
+.adf-upload {
+  background: rgba(255,255,255,0.03);
+  border: 1.5px dashed rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.adf-upload:hover { border-color: rgba(139,92,246,0.42); }
+.adf-upload input[type="file"] { display: none; }
+.adf-upload__label {
+  display: block;
+  cursor: pointer;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.85rem;
+}
+.adf-upload__label span { color: #a78bfa; }
+.adf-upload__name { margin-top: 8px; font-size: 0.78rem; color: #34d399; }
+
+/* Preview thumb */
+.adf-preview {
+  margin-top: 10px;
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.welcome-message-Admin {
-    font-size: 46px;
-    font-weight: bold;
-    color: #ffffff;
+/* Toast */
+.adf-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.2);
+  color: #34d399;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 11px 14px;
+  border-radius: 10px;
+  margin-bottom: 22px;
+}
+.adf-toast--err {
+  background: rgba(239,68,68,0.08);
+  border-color: rgba(239,68,68,0.2);
+  color: #f87171;
+}
+
+/* Divider */
+.adf-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 20px 0;
+}
+
+/* Submit */
+.adf-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  letter-spacing: 0.03em;
+  margin-top: 4px;
+}
+.adf-btn:hover:not(:disabled) { opacity: 0.88; transform: translateY(-1px); }
+.adf-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+/* Subcat empty hint */
+.adf-hint {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.22);
+  margin-top: 5px;
 }
