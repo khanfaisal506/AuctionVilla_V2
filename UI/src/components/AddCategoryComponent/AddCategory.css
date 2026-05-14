@@ -1,0 +1,68 @@
+.background-image {
+    /* Set background image properties */
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust as needed */
+}
+
+.content-container {  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Fill the height of the parent */
+}
+
+.admin-message {
+    /* Style the admin message */
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.manage-button {
+    /* Style the manage buttons */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.manage-button:hover {
+    background-color: #0056b3;
+}
+
+.welcome-message-Admin {
+    font-size: 46px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Add this CSS to your styles.css file */
+.container-xxl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+}
+
+.container-addc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1.mb-4 {
+    text-align: center;
+}
+
+.addcform {
+    width: 100%; /* You can adjust this width as needed */
+    max-width: 500px; /* To control the maximum width of the form */
+}

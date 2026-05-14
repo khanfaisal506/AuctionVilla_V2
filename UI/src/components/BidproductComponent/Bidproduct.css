@@ -1,0 +1,108 @@
+.bidproduct {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px; /* Set the height of the bid product container */
+    overflow-y: auto; /* Add a scrollbar if the content exceeds the height */
+  }
+  
+  .bidproduct h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .bidproduct table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 300px; /* Set the height of the table */
+    overflow-y: auto; /* Add a scrollbar if the content exceeds the height */
+  }
+  
+  .bidproduct table th,
+  .bidproduct table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    height: 30px; /* Set the height of each table row */
+  }
+  
+  .bidproduct table th {
+    background-color: #f0f0f0;
+  }
+  
+  .bidproduct table td {
+    background-color: #fff;
+  }
+  
+  .bidproduct table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .bidproduct form {
+    margin-top: 20px;
+    height: 100px; /* Set the height of the form */
+  }
+  
+  .bidproduct input[type="text"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .bidproduct button[type="button"] {
+    width: 100%;
+    height: 40px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .bidproduct button[type="button"]:hover {
+    background-color: #c82333;
+  }
+  
+  /* Output Message Styles */
+  
+  .bidproduct font {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  
+  @media only screen and (max-width: 768px) {
+    .bidproduct {
+      margin: 20px auto;
+      height: 400px; /* Adjust the height for smaller screens */
+    }
+    .bidproduct table {
+      height: 250px; /* Adjust the height of the table for smaller screens */
+    }
+    .bidproduct form {
+      height: 80px; /* Adjust the height of the form for smaller screens */
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .bidproduct {
+      margin: 10px auto;
+      height: 300px; /* Adjust the height for even smaller screens */
+    }
+    .bidproduct table {
+      height: 200px; /* Adjust the height of the table for even smaller screens */
+    }
+    .bidproduct form {
+      height: 60px; /* Adjust the height of the form for even smaller screens */
+    }
+  }

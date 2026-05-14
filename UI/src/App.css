@@ -1,0 +1,70 @@
+/* ── GLOBAL DARK THEME OVERRIDES ── */
+
+/* Reset old welcome-hero section wrapper */
+.welcome-hero {
+  all: unset !important;
+}
+
+/* Kill old navbar styles that conflict */
+.top-area,
+.header-area,
+.navbar.bootsnav,
+.navbar.navbar-default,
+.navbar-sticky {
+  all: unset !important;
+  display: block !important;
+}
+
+/* Kill bootstrap navbar styles */
+nav.navbar {
+  background: none !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: unset !important;
+  position: unset !important;
+}
+
+/* Old body/background reset */
+body {
+  background-color: #050505 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+/* Old container overrides */
+.container {
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* Kill all old link colors inside new nav */
+.av-navbar a,
+.av-navbar a:hover,
+.av-navbar a:focus,
+.av-navbar a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Global smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix old nav a styles bleeding in */
+nav a {
+  display: inline !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+  font-weight: inherit !important;
+  text-transform: inherit !important;
+  color: inherit !important;
+}
+
+/* Root sizing */
+#root {
+  min-height: 100vh;
+  background: #050505;
+}

@@ -1,0 +1,8 @@
+/* Register uses the shared auth styles from Login.css */
+/* Any register-specific overrides go here */
+
+.reg-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}

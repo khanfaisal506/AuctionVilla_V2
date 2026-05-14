@@ -1,0 +1,50 @@
+.background-image {
+    /* Set background image properties */
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust as needed */
+}
+
+form{
+    margin-top: 100px;
+    height: 100vh;
+}
+
+.content-container {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Fill the height of the parent */
+}
+
+.admin-message {
+    /* Style the admin message */
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.manage-button {
+    /* Style the manage buttons */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.manage-button:hover {
+    background-color: #0056b3;
+}
+
+.welcome-message-Admin {
+    font-size: 46px;
+    font-weight: bold;
+    color: #ffffff;
+}

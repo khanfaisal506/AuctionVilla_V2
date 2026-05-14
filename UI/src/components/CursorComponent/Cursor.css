@@ -1,0 +1,99 @@
+/* Hide native cursor globally */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* ── Dot (inner) ── */
+.cur-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  margin-left: -3px;
+  margin-top: -3px;
+  transition: width 0.2s ease, height 0.2s ease,
+              margin 0.2s ease, opacity 0.2s ease,
+              background 0.2s ease;
+  will-change: transform;
+}
+
+.cur-dot--hover {
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.cur-dot--click {
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  margin-top: -2px;
+  background: #c084fc;
+}
+
+.cur-dot--hidden {
+  opacity: 0;
+}
+
+/* ── Ring (outer) ── */
+.cur-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  margin-left: -18px;
+  margin-top: -18px;
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              height 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              margin 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.25s ease,
+              opacity 0.2s ease,
+              background 0.25s ease;
+  will-change: transform;
+}
+
+.cur-ring--hover {
+  width: 52px;
+  height: 52px;
+  margin-left: -26px;
+  margin-top: -26px;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cur-ring--click {
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  margin-top: -14px;
+  border-color: rgba(192, 132, 252, 0.6);
+  background: rgba(192, 132, 252, 0.06);
+}
+
+.cur-ring--hidden {
+  opacity: 0;
+}
+
+/* Only show on devices that support fine pointers (desktop) */
+@media (pointer: coarse) {
+  .cur-dot,
+  .cur-ring {
+    display: none;
+  }
+
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+}

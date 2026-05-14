@@ -1,0 +1,46 @@
+.background-image {
+    /* Set background image properties */
+    background-color: black;
+    background-size: cover;
+    height: 100vh; /* Adjust as needed */
+}
+
+.content-container-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Fill the height of the parent */
+    padding-bottom: 100px;
+
+}
+
+.welcome-message {
+    /* Style the welcome message */
+    font-size: 46px;
+    font-weight: bold;
+    color: #ffffff;
+   
+}
+
+.admin-message {
+    /* Style the admin message */
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.manage-button {
+    /* Style the manage buttons */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.manage-button:hover {
+    background-color: #0056b3;
+}

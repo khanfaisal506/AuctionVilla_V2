@@ -1,0 +1,13 @@
+#category-main
+{
+    height: auto;
+    width: 600px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.category-part
+{
+    height: 150px;
+    width: 200px;
+    float: left;
+}
